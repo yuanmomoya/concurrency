@@ -2,21 +2,17 @@ package com.mmall.concurrency.example.atomic;
 
 import com.mmall.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.atomic.LongAdder;
 
 /**
+ * AtomicReference示例
+ *
  * @author yuanmomo
  * @create 2020-10-26 21:53
  */
 @Slf4j
 @ThreadSafe
-public class AtomicExample4 {
+public class AtomicReferenceExample {
    private static AtomicReference<Integer> count = new AtomicReference<>(0);
 
     public static void main(String[] args) {

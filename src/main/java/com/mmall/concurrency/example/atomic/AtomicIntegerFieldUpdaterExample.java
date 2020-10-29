@@ -9,15 +9,17 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
+ * AtomicIntegerFieldUpdater示例
+ *
  * @author yuanmomo
  * @create 2020-10-26 21:53
  */
 @Slf4j
 @ThreadSafe
-public class AtomicExample5 {
+public class AtomicIntegerFieldUpdaterExample {
     // AtomicIntegerFieldUpdater 原子性去更新一个类的实例
-    private static AtomicIntegerFieldUpdater<AtomicExample5> updater =
-            AtomicIntegerFieldUpdater.newUpdater(AtomicExample5.class, "count");
+    private static AtomicIntegerFieldUpdater<AtomicIntegerFieldUpdaterExample> updater =
+            AtomicIntegerFieldUpdater.newUpdater(AtomicIntegerFieldUpdaterExample.class, "count");
 
     @Getter
     public volatile int count = 100;
@@ -25,7 +27,7 @@ public class AtomicExample5 {
     //private static AtomicExample5 example5 = new AtomicExample5();
 
     public static void main(String[] args) {
-        AtomicExample5 example5 = new AtomicExample5();
+        AtomicIntegerFieldUpdaterExample example5 = new AtomicIntegerFieldUpdaterExample();
 
         if (updater.compareAndSet(example5, 100, 200)) {
             log.info("update success 1, {}", example5.getCount());
